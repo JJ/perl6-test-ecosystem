@@ -6,10 +6,10 @@ RUN apk update && apk upgrade \
     && zef install IO::Socket::SSL Test::META LWP::Simple \
     && mkdir .travis
 
-ADD https://raw.githubusercontent.com/perl6/ecosystem/master/.travis/testpackagemeta.pl .travis
+ADD https://raw.githubusercontent.com/perl6/ecosystem/master/.travis/testpackagemeta.pl6 .travis
 
 # Will run this
-ENTRYPOINT perl6 ./.travis/testpackagemeta.pl
+ENTRYPOINT perl6 ./.travis/testpackagemeta.pl6
 
 # Repeating mother's env
 ENV PATH="/root/.rakudobrew/bin:${PATH}"
