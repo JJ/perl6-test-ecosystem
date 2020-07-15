@@ -3,6 +3,7 @@ LABEL version="1.1" maintainer="JJ Merelo <jjmerelo@GMail.com>"
 
 # Update and add modules.
 RUN apk update && apk upgrade \
+    && apk add build-base \
     && zef install IO::Socket::SSL Test::META LWP::Simple \
     && mkdir .travis
 
