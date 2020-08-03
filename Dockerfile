@@ -1,10 +1,13 @@
 FROM jjmerelo/raku-test-openssl:latest
-LABEL version="1.1" maintainer="JJ Merelo <jjmerelo@GMail.com>"
+LABEL version="2.0" maintainer="JJ Merelo <jjmerelo@GMail.com>"
 
 # Update and add modules.
+USER root
 RUN apk update && apk upgrade \
-    && apk add build-base \
-    && zef install IO::Socket::SSL Test::META LWP::Simple \
+    && apk add build-base
+
+USER raku
+RUN zef install IO::Socket::SSL Test::META LWP::Simple \
     && mkdir .travis
 
 ADD https://raw.githubusercontent.com/Raku/ecosystem/master/.travis/testpackagemeta.p6 .travis
