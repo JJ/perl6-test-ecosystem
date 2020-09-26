@@ -1,5 +1,5 @@
 FROM jjmerelo/raku-test-openssl:latest
-LABEL version="2.0.1" maintainer="JJ Merelo <jjmerelo@GMail.com>"
+LABEL version="2.0.2" maintainer="JJ Merelo <jjmerelo@GMail.com>"
 
 # Update and add modules.
 USER root
