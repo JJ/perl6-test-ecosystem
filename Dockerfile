@@ -4,7 +4,7 @@ LABEL version="2.0.1" maintainer="JJ Merelo <jjmerelo@GMail.com>"
 # Update and add modules.
 USER root
 RUN apk update && apk upgrade \
-    && apk add build-base
+    && apk add build-base openssh
 
 USER raku
 RUN zef install IO::Socket::SSL Test::META LWP::Simple \
